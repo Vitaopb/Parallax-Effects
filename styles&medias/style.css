@@ -5,11 +5,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+*::-webkit-scrollbar {
+    display: none;
     scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+html {
+    scroll-behavior: smooth;
 }
 
 main {
@@ -23,15 +27,13 @@ main {
  }
 /* --------- HEADER --------- */
 #header {
-    position: absolute;
-    top: 0;
-    left: 0;
+    margin: 0 auto;
+    max-width: 1500px;
     width: 100%;
     padding: 30px 100px;
     display: flex;
     justify-content:space-between;
     align-items: center;
-    z-index: 10000;
 }
 
 .logo a {
@@ -55,7 +57,6 @@ main {
     border-radius: 25px;
     transition: background .8s;
     text-shadow: 0px 0px 3px black;
-
 }
 
 #header ul li  a:hover,
@@ -97,6 +98,7 @@ main {
 
 #moon {
     mix-blend-mode: screen;
+
 }
 
 #text {
@@ -121,6 +123,8 @@ main {
     overflow: hidden;
 }
 
+/* ----- ABOUT -----*/
+
 .about {
     position: relative;
     padding: 100px;
@@ -130,10 +134,38 @@ main {
 .about h2 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: #ddd;
 }
 
 .about p {
-    color: #fff;
+    color: #ddd;
     font-size: 1.2rem;
+}
+
+.svg-about {
+    width: 100%;
+    height: 100%;
+}
+
+
+.svg-clip {
+    width: 100vw;
+    position: absolute;
+    top: 400px;
+    left: -140px;   
+}
+
+.svg-clip path {
+    width: 100vw;
+    fill: #ddd;
+}
+
+.svg-me {
+    position: relative;
+    width: 60%;
+    height: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
 }
