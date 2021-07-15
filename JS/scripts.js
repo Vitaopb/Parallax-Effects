@@ -16,7 +16,7 @@ window.addEventListener('scroll', function(){
     text.style.marginRight = value * 3 + 'px';
     text.style.marginTop = value * 1.5 + 'px';
     btn_explore.style.marginTop = value * 1.5 + 'px';
-    header.style.bottom = value * 0.5 + 'px';
+    header.style.top = value * 0.5 + 'px';
 
     if (value >= 450) {
         text.style.display = "none"
@@ -31,7 +31,29 @@ window.addEventListener('scroll', function(){
     }
 })
 
-function click() {
-    
+// const links = document.querySelectorAll('ul > li');
+// link.onclick = () => {
+//         links.forEach(function(link) {
+//         link.classList.add('active');
+//     }
+//     console.log('[forEach]', link);
+// })
+// links.addEventListener('click', link )
+var activeItem = document.querySelector('.active')
+var item = document.querySelectorAll('ul > li > a');
+
+function clickItem(item) {
+
+    if (activeItem == item) return;
+
+    if (activeItem) {
+        activeItem.classList.remove("active");
+    }
+        
+    item.classList.add("active");
+    activeItem = item;
 }
 
+item.forEach((item) => {
+    item.addEventListener("click", () => clickItem(item));
+})
